@@ -11,7 +11,7 @@ AUTHOR_EMAIL = 'mhuaylch10@alumnes.ub.edu'  # Modificar con vuestros datos
 URL = 'https://www.linkedin.com/in/miguel-huayllas/'  # Modificar con vuestros datos
 
 LICENSE = 'MIT'  # Tipo de licencia
-DESCRIPTION = 'Librería para leer ficheros PDFs y extraer la información en formato str'  # Descripción corta
+DESCRIPTION = 'Accesible themes and functions to create accessible graph for Altair'  # Descripción corta
 LONG_DESCRIPTION = (HERE / "README.md").read_text(
     encoding='utf-8')  # Referencia al documento README con una descripción más elaborada
 LONG_DESC_TYPE = "text/markdown"
@@ -28,7 +28,7 @@ ENTRY_POINTS: Dict[str, List[str]] = {
         "print_theme = altair_easeviz.themes:print_friendly_theme",
     ],
 }
-DEPENDENCIES: List[str] = ["altair==5.*", "typing-extensions>=4.0, <5", "jinja2==3.*"]
+DEPENDENCIES: List[str] = ["altair==5.*", "typing-extensions>=4.0, <5", "jinja2==3.*", "pyRserve>=1.0"]
 
 setup(
     name=PACKAGE_NAME,
