@@ -33,23 +33,19 @@ This model helps to create easy new themes for Altair, it is with this model tha
 
 The name that be registered in the altair.themes
 
-**text_color** : str, HexColor,
-Literal['red', 'yellow', [ColorName](https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName)]
+**text_color** : str, HexColor,[ColorName]
 
 Define the color of all the text of the chart included the mark Text
 
-**axis_color**:  str, HexColor,
-Literal['red', 'yellow', [ColorName](https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName)]
+**axis_color**:  str, HexColor,[ColorName]
 
 Define the color of the grid, axis and mark Lines of the chart
 
-**mark_color**: str, HexColor,
-Literal['red', 'yellow', [ColorName](https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName)]
+**mark_color**: str, HexColor,[ColorName]
 
 Define the color of all marks in the chart
 
-**background_color**:str, HexColor,
-Literal['red', 'yellow', [ColorName](https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName)]
+**background_color**:str, HexColor,[ColorName]
 
 Define the color of the background of the chart
 
@@ -151,19 +147,417 @@ Create and hold dict of type Mark describe it in types
 
 ### ConfigModel
 
+`class altair_easeviz.models.ConfigModel(**kwargs)`
+
+The configuration model, resembling other models outlining the vega-lite specification, utilizes keyword arguments (
+kwargs) to accommodate an arbitrary number of parameters, should the need arise. However, in consideration of the Config
+type and the presumption that developers may not explicitly define each parameter, the model inherently incorporates a
+predetermined set of default parameters.
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**axis** : dict
+
+A dict that holds keys and values of the axis parameter valids in the vega-lite specification
+
+**legend** : dict
+
+A dict that holds keys and values of the legend parameter valids in the vega-lite specification
+
+**range** : dict
+
+A dict that holds keys and values of the range parameter valids in the vega-lite specification
+
+**background** : str
+
+A string that holds the value of the background of the chart
+
+**header** : dict
+
+A dict that holds keys and values of the header parameter valids in the vega-lite specification
+
+**title** : dict
+
+A dict that holds keys and values of the title parameter valids in the vega-lite specification
+
+**view** : dict
+
+A dict that holds keys and values of the view parameter valids in the vega-lite specification
+
+**Functions:**
+
+| Function             | Description                                                                                                        |
+|----------------------|--------------------------------------------------------------------------------------------------------------------|
+| create_config()      | A function that uses all the parameters describe in _required_params and creates a Config type(dict) and return it |
+| create_full_config() | A function that uses all the parameters passed i the kwargs and creates a Config type(dict) and return it          |
+| __str__()            | It return a string of the function create_full_config()                                                            |
+
 ### AxisModel
+
+`class altair_easeviz.models.AxisModel(**kwargs)`
+
+A model to hold all related axis parameters
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**domain** : bool
+
+A boolean flag indicating if the domain (the axis baseline) should be included as part of the axis.
+
+**domain**: str, ColorName, HexColor
+
+Color of axis domain line.
+
+**domainColor** : str, HexColor,[ColorName]
+
+Color of axis domain line.
+
+**grid**: bool
+
+A boolean flag indicating if grid lines should be included as part of the axis
+
+**gridCap**: str
+
+The stroke cap for grid lines’ ending style. One of "butt", "round" or "square".
+
+**gridColor** : str, HexColor,[ColorName]
+
+Color of gridlines.
+
+**gridDash**:[[condition, value]]
+
+An array of alternating [stroke, space] lengths for dashed grid lines.
+
+**gridWidth**:float
+
+The grid width, in pixels.
+
+**labelColor** :str, HexColor,[ColorName]
+
+The color of the tick label can be in hex color code or regular color name.
+
+**labelFont**:str
+
+The font of the tick label.
+
+**labelPadding**:float
+
+The padding in pixels between labels and ticks.
+
+**tickColor** :str, HexColor,[ColorName]
+
+The color of the axis’s tick.
+
+**tickOpacity**:float
+Opacity of the ticks.
+**ticks**:bool
+Boolean value that determines whether the axis should include ticks.
+**tickSize**:int
+The size in pixels of axis ticks.
+**titleColor** :str, HexColor,[ColorName]
+Color of the title, can be in hex color code or regular color name.
+**titleFont**:str
+Font of the title. (e.g., "Helvetica Neue" ).
+**titleFontSize**:int
+Font size of the title.
+
+**Functions:**
+
+| Function      | Description                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| create_axis() | A function that uses all the parameters describe in _required_params and creates a Axis type(dict) and returns it |
 
 ### HeaderModel
 
+`class altair_easeviz.models.HeaderModel(**kwargs)`
+
+A model to hold all related header parameters
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**labelColor**: str, HexColor,[ColorName]
+
+The color of the header label can be in hex color code or regular color name.
+
+**labelFont**: str
+
+The font of the header label.
+
+**labelFontSize**: int
+
+The font size of the header label, in pixels.
+
+**titleColor**: str, HexColor,[ColorName]
+
+Color of the header title can be in hex color code or regular color name.
+
+**titleFont**: str
+Font of the header title. (e.g., "Helvetica Neue" ).
+
+**titleFontSize**: int
+
+The font style of the header title.
+
+**Functions:**
+
+| Function        | Description                                                                                                         |
+|-----------------|---------------------------------------------------------------------------------------------------------------------|
+| create_header() | A function that uses all the parameters describe in _required_params and creates a Header type(dict) and returns it |
+
 ### LegendModel
+
+`class altair_easeviz.models.HeaderModel(**kwargs)`
+
+A model to hold all related header parameters
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**labelColor**: str, HexColor,[ColorName]
+
+The color of the legend label, can be in hex color code or regular color name.
+
+**labelFont**: str
+
+The font of the legend label.
+
+**labelFontSize**: int
+
+The font size of legend label.
+
+**symbolSize**: int
+
+The size of the legend symbol, in pixels.
+
+**titleColor**: str, HexColor,[ColorName]
+
+The color of the legend title, can be in hex color code or regular color name.
+
+**titleFont**: str
+
+The font of the legend title.
+
+**titleFontSize**: int
+
+The font size of the legend title.
+
+**titlePadding**: int
+
+The padding, in pixels, between title and legend.
+
+**Functions:**
+
+| Function        | Description                                                                                                         |
+|-----------------|---------------------------------------------------------------------------------------------------------------------|
+| create_legend() | A function that uses all the parameters describe in _required_params and creates a Legend type(dict) and returns it |
 
 ### MarkModel
 
+    class altair_easeviz.models.MarkArkModel(**kwargs)
+    class altair_easeviz.models.MarkBarModel(**kwargs)
+    class altair_easeviz.models.MarkLineModel(**kwargs)
+    class altair_easeviz.models.MarkLineModel(**kwargs)
+    class altair_easeviz.models.MarkPathModel(**kwargs)
+    class altair_easeviz.models.MarkPointModel(**kwargs)
+    class altair_easeviz.models.MarkRectModel(**kwargs)
+    class altair_easeviz.models.MarkRuleModel(**kwargs)
+    class altair_easeviz.models.MarkShapeModel(**kwargs)
+    class altair_easeviz.models.MarkTextModel(**kwargs)
+
+A model to hold all related mark parameters. Unlike other models the mark related models hold similar variables and all
+are the
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**color**: str, HexColor,[ColorName]
+
+Default color. The fill and stroke properties have higher precedence than color and will override color.
+
+**fill**: str, HexColor,[ColorName]
+
+Default fill color.
+
+**filled**: bool
+
+Whether the mark’s color should be used as fill color instead of stroke color.
+
+**font**: str
+
+The typeface to set the text in (e.g., "Helvetica Neue" ).
+
+**fontSize**: int
+
+The font size, in pixels.
+
+**shape**: str
+
+Shape of the point marks. Supported values include:
+
+- plotting shapes: "circle", "square", "cross", "diamond", "triangle-up", "triangle-down", "triangle-right", or "
+  triangle-left".
+
+- the line symbol "stroke"
+
+- centered directional shapes "arrow", "wedge", or "triangle"
+
+- a custom SVG path string (For correct sizing, custom shape paths should be defined within a square bounding box with
+  coordinates ranging from -1 to 1 along both the x and y dimensions.)
+
+**stroke**: str, HexColor,[ColorName]
+
+Default stroke color.
+
+**strokeWidth**: float
+
+The stroke width, in pixels.
+
+**Functions:**
+
+The function name varies in each model but follows a similar pattern. For example fot the MarkBarModel the function
+would be create_mark_bar().
+
+| Function           | Description                                                                                                        |
+|--------------------|--------------------------------------------------------------------------------------------------------------------|
+| create_name_mark() | A function that uses all the parameters describe in _required_params and creates a Mark type( dict) and returns it |
+
 ### RangeModel
+
+`class altair_easeviz.models.RangeModel(**kwargs)`
+
+A model to hold all related header parameters
+
+**Parameters:**
+
+**category**: List(str, HexColor, [ColorName])
+
+Default color scheme for categorical data.
+
+**diverging**: List(str, HexColor, [ColorName])
+
+Default color scheme for diverging quantitative ramps.
+
+**heatmap**: List(str, HexColor, [ColorName])
+
+Default color scheme for quantitative heatmaps.
+
+**ramp**: List(str, HexColor, [ColorName])
+
+Default color scheme for sequential quantitative ramps.
+
+**Functions:**
+
+| Function       | Description                                                                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------|
+| create_range() | A function that uses all the parameters describe in _required_params and creates a Range type(dict) and returns it |
 
 ### TitleModel
 
+`class altair_easeviz.models.TitleModel(**kwargs)`
+
+A model to hold all related title parameters
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**anchor**: str
+
+The anchor position for placing the title and subtitle text. One of "start", "middle", or "end". For example, with an
+orientation of top these anchor positions map to a left-, center-, or right-aligned title.
+Default "star"
+
+**color**: str, HexColor, [ColorName]
+
+Text color for title text.
+
+**font**: str
+
+Font name for title text.
+
+**fontSize**: int
+
+Font style for title text.
+
+**fontWeight**: str, ‘normal’, ‘bold’, ‘lighter’, ‘bolder’, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+Font weight for title text. This can be either a string (e.g "bold", "normal" ) or a number ( 100, 200, 300, …, 900
+where "normal" = 400 and "bold" = 700 ).
+
+**offset**: int
+
+The orthogonal offset in pixels by which to displace the title group from its position along the edge of the chart.
+
+**subtitleColor**: str, HexColor, [ColorName]
+
+Text color for subtitle text.
+
+**subtitleFontSize**: int
+
+Font size in pixels for subtitle text.
+
+**Functions:**
+
+| Function       | Description                                                                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------|
+| create_title() | A function that uses all the parameters describe in _required_params and creates a Title type(dict) and returns it |
+
 ### ViewModel
+
+`class altair_easeviz.models.ViewModel(**kwargs)`
+
+A model to hold all related view parameters
+
+**Parameters:**
+
+_**required_params**: dict
+
+A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.
+
+**continuousHeight**: int
+
+The default height when the plot has a continuous y-field for x or latitude, or has arc marks. Default value: 300
+
+**continuousWidth**: int
+
+The default width when the plot has a continuous field for x or longitude, or has arc marks.
+Default value: 400
+
+**stroke**: str, HexColor, [ColorName]
+The stroke color.Defalut value: transparent
+
+**Functions:**
+
+| Function      | Description                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| create_view() | A function that uses all the parameters describe in _required_params and creates a View type(dict) and returns it |
 
 ## Themes
 
@@ -248,6 +642,7 @@ All this function also work with keyboard navigation so can be used for more peo
 
 ```python
 def create_accessible_scheme(chart: Chart, filename: str = 'test', description: str = None):
+
 ```
 
 **Parameters**:
@@ -274,6 +669,7 @@ It works recreating the chart in R, so it can only use simple charts
 
 ```python
 def generate_description(chart: Chart, type_chart: str, axis_x: List, axis_y: List):
+
 ```
 
 **Parameters**:
@@ -300,11 +696,152 @@ It returns a dict object with either of the next keys:
 
 - 'res' It contains a string with a description of the chart
 - 'error' It contains the description of the exception that occurred
-## Patterns
+
+## Color schemes
+
+### Color palettes
+
+The following are the available color palettes in tokens these can be found in color brewer
+
+- dark2
+
+![Texto alternativo](assets/dark2.png)
+
+- paired
+
+![Texto alternativo](assets/paired.png)
+
+- set1
+
+![Texto alternativo](assets/set1.png)
+
+- set3
+
+![Texto alternativo](assets/set3.png)
+
+### Color patterns
+
+When using our function create_accesible_scheme() you can use any of the next patterns with the ID:
+
+This first batch of a pattern follows the technique of associatiing a color to an object, we choose the most simple
+color
+palette that contains the basic colors
+
+- red-heart
+
+![red-heart pattern](assets/red-heart.png)
+
+- blue-rain
+
+![blue-rain pattern](assets/blue-rain.png)
+
+- green-leaf
+
+![green-leaf pattern](assets/green-leaf.png)
+
+- purple-grapes
+
+![purple-grapes pattern](assets/purple-grapes.png)
+
+- orange-orange
+
+![orange-orange pattern](assets/orange-orange.png)
+
+- yellow-star
+
+![yellow-star pattern](assets/yellow-star.png)
+
+- brown-chocolate
+
+![brown-chocolate pattern](assets/brown-chocolate.png)
+
+- pink-donut
+
+![pink-donut pattern](assets/pink-donut.png)
+
+- grey-wrench
+
+This next batch contains different patterns not following any logic, these were provided by the Irine
+Rios [patterns fills project](https://iros.github.io/patternfills/) and the color scheme behind is the same used in the
+accessible theme
+
+![grey-wrench pattern](assets/grey-wrench.png)
+
+- teal-vertical
+
+![teal-vertical pattern](assets/teal-vertical.png)
+
+- orange-horizontal
+
+![orange-horizontal pattern](assets/orange-horizontal.png)
+
+- purple-diagonal-rl
+
+![purple-diagonal-rl pattern](assets/purple-diagonal-rl.png)
+
+- pink-diagonal-lr
+
+![pink-diagonal-lr pattern](assets/pink-diagonal-lr.png)
+
+- green-dots-inv
+
+![green-dots-inv pattern](assets/green-dots-inv.png)
+
+- yellow-circles
+
+![yellow-circles pattern](assets/yellow-circles.png)
+
+- brown-cross
+
+![brown-cross pattern](assets/brown-cross.png)
+
+- grey-houndstooth
+
+![grey-houndstooth pattern](assets/grey-houndstooth.png)
 
 ## Tokens
 
+The tokens python files contains resources of colors, font sizes, spacing sizes, color palettes, etc.
+
+A good example would be to import a color palette and use it in a chart
+
+```python
+from altair_easeviz.tokens import COLORS
+
+color_palette = COLORS['schemes']['categorical']['ibm']  # Return a list of colors in HEX
+```
+
 ## Types
+
+[Typing](https://docs.python.org/3/library/typing.html) in python was used to ensure and give hints in future
+developments of what to expect in a variable a good example would be that we used this to highlight how a parameter in a
+vega-lite specification should have, does not affect the compiling process but helps to develop , the next is an example
+of what should have a Config type
+
+```python
+class Config(TypedDict, total=False):
+    """Chart theme configuration."""
+
+    axis: Axis
+    axisBand: Axis
+    axisY: Axis
+    legend: Legend
+    arc: Mark
+    bar: Mark
+    line: Mark
+    path: Mark
+    point: Mark
+    rect: Mark
+    rule: Mark
+    shape: Mark
+    text: Mark
+    range: ScaleRange
+    background: str
+    group: Mark
+    header: Header
+    title: Title
+    view: View
+```
 
 [Getting Started]: index.md
 
@@ -334,3 +871,4 @@ It returns a dict object with either of the next keys:
 
 [WAIM]:https://webaim.org/resources/contrastchecker/
 
+[ColorName]:https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName
