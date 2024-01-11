@@ -7,7 +7,7 @@ from altair_easeviz.models.models_view import ViewModel
 from altair_easeviz.types_theme import Config, Axis, Legend, ScaleRange, Header, Title, View
 
 
-class ConfigModel():
+class ConfigModel:
 
     def __init__(self, **kwargs):
         self._required_params = {

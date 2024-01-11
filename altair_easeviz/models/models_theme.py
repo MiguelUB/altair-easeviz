@@ -162,10 +162,10 @@ class ModelTheme:
         self.colors['text'] = new_color
         alt.themes.register(self.name_theme, self.get_theme())
 
-    def increse_font_size(self, number: int):
+    def increase_font_size(self, number: int):
         """
         Increase the size of the font by a given number, since all text most by hierarchical the ratio is kept and all
-        fonts increases sizes, then re register the theme in altair.themes
+        fonts increase sizes, then re register the theme in altair.themes
         :param number: A int value greater than 0
         """
         if number > 0:
@@ -176,8 +176,7 @@ class ModelTheme:
 
     def decrease_font_size(self, number: int):
         """
-        Decrease the size of the font by a given number, since all text most by hierarchical the ratio is kept and all
-        fonts decreases sizes, then re register the theme in altair.themes
+        Decrease the size of the font by a given number, since all text most by hierarchical the ratio is kept and all-        fonts decrease sizes, then re register the theme in altair.themes
         :param number: A int value greater than 0
         """
         if number > 0:
