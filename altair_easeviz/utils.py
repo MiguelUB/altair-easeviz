@@ -10,7 +10,7 @@ def create_accessible_scheme(chart: Chart, filename: str = 'test', description: 
     """
     This function will create an HTML file in the root of the project, this HTML file will contain the vega lite style
     graphic using the information from the vega-altair Chart passed.
-    The new HTML file contains some option for the user to  change the color scheme in order to be more accessible
+    The new HTML file contains some option for the user to change the color scheme in order to be more accessible
 
     :param chart:Chart This is a vega-altair Chart object
     :param filename:str Name of the new HTML file

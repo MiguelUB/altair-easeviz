@@ -106,11 +106,11 @@ COLORS: Colors = {
     "schemes": {
         "categorical": {
             "paired": ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c'],
-            # Suitable for dark background
-            "dark2": ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', "#609B1C"],  # Suitable for white and dark background
-            "set2": ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3', '#a6d854'],  # Suitable for dark background
+            # Suitable for a dark background
+            "dark2": ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', "#609B1C"],  # Suitable for a white and dark background
+            "set2": ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3', '#a6d854'],  # Suitable for a dark background
             'wong': ['#E69F00', '#56B4E9', '#009E73', '#F0E442', '#0072B2', '#D55E00', "#CC79A7"],
-            # Suitable for dark background
+            # Suitable for a dark background
             'tol': ['#332288', '#117733', '#44AA99', '#88CCEE', '#DDCC77', '#CC6677', "#AF469D", "#882255"],
             # Not suitable for white or dark background acording to 3:1 ratio of WCGA still is usefull for color blind people
             "ibm": ['#648FFF', '#FFB000', '#785EF0', '#FE6100', '#DC267F'],

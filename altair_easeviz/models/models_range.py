@@ -1,6 +1,5 @@
 from typing import List
 
-
 from altair_easeviz.tokens import COLORS
 from altair_easeviz.types_theme import ScaleRange
 
@@ -8,8 +7,6 @@ from altair_easeviz.types_theme import ScaleRange
 class RangeModel():
 
     def __init__(self, **kwargs):
-
-
         # Establecer valores predeterminados
         self.category = kwargs.get('category', COLORS["schemes"]["categorical"]["dark2"])
         self.diverging = kwargs.get('diverging', COLORS["schemes"]["diverging"]["bluered"])

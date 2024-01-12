@@ -78,7 +78,7 @@ def generate_description(chart: Chart, type_chart: str, axis_x: List, axis_y: Li
             r_code = r_code_bar_chart(axis_x, axis_y, chart_title, x_axis_title, y_axis_title)
             response = {"res": conn.eval(r_code)}
         if (type_chart == "scatterplot"):
-            r_code = r_code_scatter_plot(axis_x, axis_y, chart_title,x_axis_title, y_axis_title)
+            r_code = r_code_scatter_plot(axis_x, axis_y, chart_title, x_axis_title, y_axis_title)
             response = {"res": conn.eval(r_code)}
 
         if (type_chart == "piechart"):

@@ -17,7 +17,7 @@ class Axis(TypedDict, total=False):
     gridWidth: float
     labelColor: str
     labelFont: str
-    labelFontSize:str
+    labelFontSize: str
     labelPadding: int
     tickColor: str
     tickOpacity: float
