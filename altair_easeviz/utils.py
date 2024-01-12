@@ -6,7 +6,7 @@ from jinja2 import Template
 from altair_easeviz.templates import accesible_template
 
 
-def create_accessible_scheme(chart: Chart, filename='test', description: str = None):
+def create_accessible_scheme(chart: Chart, filename: str = 'test', description: str = None):
     """
     This function will create an HTML file in the root of the project, this HTML file will contain the vega lite style
     graphic using the information from the vega-altair Chart passed.

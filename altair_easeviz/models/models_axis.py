@@ -9,6 +9,7 @@ class AxisModel():
         self._required_params = {
             'domain': bool, 'domainColor': str, 'grid': bool, 'gridCap': str, 'gridColor': str,
             'gridDash': list, 'gridWidth': float, 'labelColor': str, 'labelFont': str,
+            'labelFontSize': int,
             'labelPadding': int, 'tickColor': str, 'tickOpacity': float, 'ticks': bool,
             'tickSize': int, 'titleColor': str, 'titleFont': str, 'titleFontSize': int
         }
@@ -23,6 +24,7 @@ class AxisModel():
         self.gridWidth = kwargs.get('gridWidth', STROKE_WIDTHS["sm"])
         self.labelColor = kwargs.get('labelColor', COLORS["axis"])
         self.labelFont = kwargs.get('labelFont', FONT)
+        self.labelFontSize = kwargs.get('labelFontSize', FONT_SIZES["xsm"])
         self.labelPadding = kwargs.get('labelPadding', SPACING["sm"])
         self.tickColor = kwargs.get('tickColor', COLORS["axis"])
         self.tickOpacity = kwargs.get('tickOpacity', OPACITIES["md"])
@@ -58,6 +60,7 @@ class AxisModel():
             gridWidth=self.gridWidth,
             labelColor=self.labelColor,
             labelFont=self.labelFont,
+            labelFontSize=self.labelFontSize,
             labelPadding=self.labelPadding,
             tickColor=self.tickColor,
             tickOpacity=self.tickOpacity,
