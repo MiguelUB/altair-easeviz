@@ -25,7 +25,8 @@ class ModelTheme:
                                    "categorical": COLORS['schemes']['categorical']['dark2'],
                                    "diverging": COLORS['schemes']['diverging']['bluered'],
                                    "sequential": COLORS['schemes']['sequential']['blues']}}
-        self.font_size: FONT_SIZES = {'sm': FONT_SIZES['sm'], 'md': FONT_SIZES['md'], 'lg': FONT_SIZES['lg']}
+        self.font_size: FONT_SIZES = {'xsm': FONT_SIZES['xsm'], 'sm': FONT_SIZES['sm'], 'md': FONT_SIZES['md'],
+                                      'lg': FONT_SIZES['lg']}
         self.spacing: SPACING = {'sm': SPACING['sm'], 'md': SPACING['md'], 'xl': SPACING['xl']}
         self.name_theme = name_theme
         self.colors['background'] = background_color
@@ -34,7 +35,8 @@ class ModelTheme:
         self.colors['mark'] = mark_color
         self.grid = grid
 
-        self.axis_config = AxisModel(gridColor=self.colors['axis'], labelColor=self.colors['text'], tickOpacity=1.0,
+        self.axis_config = AxisModel(gridColor=self.colors['axis'], labelColor=self.colors['text'],
+                                     labelFontSize=self.font_size['xsm'], tickOpacity=1.0,
                                      gridOpacity=0.3, grid=self.grid,
                                      domainColor=self.colors['text'],
                                      tickSize=self.spacing['md'],
@@ -84,7 +86,9 @@ class ModelTheme:
                                   text=self.text_config)
 
     def get_theme(self):
-        self.axis_config = AxisModel(gridColor=self.colors['axis'], labelColor=self.colors['text'], tickOpacity=1.0,
+        self.axis_config = AxisModel(gridColor=self.colors['axis'], labelColor=self.colors['text'],
+                                     labelFontSize=self.font_size['xsm'],
+                                     tickOpacity=1.0,
                                      gridOpacity=0.3, grid=self.grid,
                                      domainColor=self.colors['text'],
                                      tickSize=self.spacing['md'],
@@ -143,7 +147,7 @@ class ModelTheme:
         :param new_color: A color given in Hexadecimal ex. #FFFFFF
         """
         self.colors['background'] = new_color
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
 
     def change_mark_color(self, new_color):
         """
@@ -152,7 +156,7 @@ class ModelTheme:
         :param new_color: A color given in Hexadecimal ex. #185ABD
         """
         self.colors['mark'] = new_color
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
 
     def change_text_color(self, new_color):
         """
@@ -160,7 +164,7 @@ class ModelTheme:
         :param new_color: A color given in Hexadecimal ex. #000000
         """
         self.colors['text'] = new_color
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
 
     def increase_font_size(self, number: int):
         """
@@ -168,21 +172,26 @@ class ModelTheme:
         fonts increase sizes, then re register the theme in altair.themes
         :param number: A int value greater than 0
         """
-        if number > 0:
+        if number >= 0:
+            self.font_size["xsm"] += number
             self.font_size["sm"] += number
             self.font_size["md"] += number
             self.font_size["lg"] += number
-            alt.themes.register(self.name_theme, self.get_theme())
+            alt.themes.register(self.name_theme, self.get_theme)
 
     def decrease_font_size(self, number: int):
         """
         Decrease the size of the font by a given number, since all text most by hierarchical the ratio is kept and all-        fonts decrease sizes, then re register the theme in altair.themes
         :param number: A int value greater than 0
         """
-        if number > 0:
+        if number >= 0:
+            self.font_size["xsm"] -= number
             self.font_size["sm"] -= number
             self.font_size["md"] -= number
             self.font_size["lg"] -= number
+
+            if self.font_size['xsm'] < 0:
+                self.font_size["xsm"] = 0
 
             if self.font_size['sm'] < 0:
                 self.font_size["sm"] = 0
@@ -190,7 +199,7 @@ class ModelTheme:
                 self.font_size["md"] = 0
             if self.font_size['lg'] < 0:
                 self.font_size["lg"] = 0
-            alt.themes.register(self.name_theme, self.get_theme())
+            alt.themes.register(self.name_theme, self.get_theme)
 
     def change_categorical_scheme(self, scheme: List[str]):
         """
@@ -198,7 +207,7 @@ class ModelTheme:
         :param scheme: A list of color in Hexadecimal like ['#123abd', '#ECB178']
         """
         self.colors['schemes']['categorical'] = scheme
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
 
     def change_sequential_scheme(self, scheme: List[str]):
         """
@@ -206,15 +215,23 @@ class ModelTheme:
         :param scheme: A list of color in Hexadecimal like ['#123abd', '#ECB178']
         """
         self.colors['schemes']['sequential'] = scheme
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
 
-    def changeColorLine(self, color_line):
+    def change_color_line(self, color_line):
         """
-        Change the color of all lines in the graph like the grid, ticks and domain, this no include the mark line
+        Change the color of all lines in the graph like the grid, ticks, and domain, this no include the mark line
         :param color_line: A color in hexadecimal ex. #000000
         """
         self.colors['axis'] = color_line
-        alt.themes.register(self.name_theme, self.get_theme())
+        alt.themes.register(self.name_theme, self.get_theme)
+
+    def change_grid_show(self):
+        """
+        Change the color of all lines in the graph like the grid, ticks, and domain, this no include the mark line
+        :param color_line: A color in hexadecimal ex. #000000
+        """
+        self.grid = not self.grid
+        alt.themes.register(self.name_theme, self.get_theme)
 
 
 class AccessibleTheme(ModelTheme):

@@ -143,7 +143,8 @@ Create and hold dict of type Mark describe it in types
 | decrease_font_size(number:int)              | Decreases all values in font_size by the number given  and re register the theme in altair with the same name_theme       |
 | change_categorical_scheme(scheme:List[str]) | Replaces the list in colors['categorical'] by the given scheme  and re register the theme in altair                       |
 | change_sequential_scheme(scheme:List[str])  | Replaces the list in colors['sequential'] by the given scheme  and re register the theme in altair                        |
-| changeColorLine(color_line)                 | Replaces the value in colors['axis'] that define the color of the grid and axis lines and re register the theme in altair |
+| change_color_line(color_line)               | Replaces the value in colors['axis'] that define the color of the grid and axis lines and re register the theme in altair |
+| change_grid_show()                          | Switch beetwen tru or false if the grid is show                                                                           |
 
 ### ConfigModel
 
@@ -249,6 +250,10 @@ The color of the tick label can be in hex color code or regular color name.
 **labelFont**:str
 
 The font of the tick label.
+
+**labelFontSize**:int
+
+The font size of the tick labels.
 
 **labelPadding**:float
 
@@ -845,7 +850,7 @@ class Config(TypedDict, total=False):
 
 [Getting Started]: index.md
 
-[Examples]: p2-examples.md
+[Examples]: p1-user_guide.md
 
 [ModelTheme]: #modeltheme
 
