@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.2'
+VERSION = '1.0'
 PACKAGE_NAME = 'altair_easeviz'
 AUTHOR = 'Miguel Huayllas'
 AUTHOR_EMAIL = 'mhuaylch10@alumnes.ub.edu'
