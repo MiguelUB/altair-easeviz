@@ -151,7 +151,7 @@ class ModelTheme:
 
     def change_mark_color(self, new_color):
         """
-        Change de color of the marks like bars,lines, points, etc when no z axis is given, then re register the theme
+        Change de color of the marks like bars,lines, points, etc. when no z axis is given, then reregister the theme
         in altair.themes
         :param new_color: A color given in Hexadecimal ex. #185ABD
         """
@@ -181,7 +181,8 @@ class ModelTheme:
 
     def decrease_font_size(self, number: int):
         """
-        Decrease the size of the font by a given number, since all text most by hierarchical the ratio is kept and all-        fonts decrease sizes, then re register the theme in altair.themes
+        Decrease the size of the font by a given number, since all text most by hierarchical the ratio is kept and all
+        fonts decrease sizes, then re register the theme in altair.themes
         :param number: A int value greater than 0
         """
         if number >= 0:
@@ -227,8 +228,7 @@ class ModelTheme:
 
     def change_grid_show(self):
         """
-        Change the color of all lines in the graph like the grid, ticks, and domain, this no include the mark line
-        :param color_line: A color in hexadecimal ex. #000000
+        Change if the grid is shown or not
         """
         self.grid = not self.grid
         alt.themes.register(self.name_theme, self.get_theme)

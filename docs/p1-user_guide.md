@@ -32,19 +32,20 @@ alt.Chart(source).mark_bar().encode(
 ## Customizing a built-in theme
 
 Each theme comes from the **ModelTheme** defined in this library [API](p2-api.md), so you only need to instance the
-model
-and call to the
-functions defined to make little customizations to the theme, then enable the theme, like this where we change the
+model and call the functions defined to make little customizations to the theme, then enable the theme, like this where
+we change the
 background color to orange:
 
 ### Changing background color
 
 ```python
 import altair as alt
+import pandas as pd
+from altair_easeviz.models import AccessibleTheme
 
 # Changing background color of the accessible_theme
-accesible_theme = AccessibleTheme()
-accesible_theme.change_background_color('orange')
+accessible_theme = AccessibleTheme()
+accessible_theme.change_background_color('orange')
 
 alt.themes.enable('accessible_theme')
 
@@ -64,7 +65,8 @@ alt.Chart(source).mark_bar().encode(
 
 ### Changing mark color
 
-This changes the bar, line, path,points,rect,ruel,shape marks.This example change the color of the marks to purple
+This changes the bar, line, path, points, rect, rule, shape marks.
+This example changes the color of the marks to purple.
 
 ```python
 import altair as alt
@@ -91,7 +93,7 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Changing text color
 
-Change the color of the title, legend, axis, texts. This example change the text color to purple
+Change the color of the title, legend, axis, texts. This example changes the text color to purple.
 
 ```python
 import altair as alt
@@ -118,7 +120,7 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Changing line color
 
-Change the color of axis ticks and grid lines. This example changes the line colors to red and shows the grid
+Change the color of axis ticks and grid lines. This example changes the line colors to red and shows the grid.
 
 ```python
 import altair as alt
@@ -146,7 +148,7 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Increasing font size
 
-Increase by a number all the font sizes used
+Increase all the font sizes used by a given number.
 
 ```python
 import altair as alt
@@ -173,7 +175,7 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Decreasing font size
 
-Decrease by a given number all the font sizes used until reached zero, if reaches zero the text is no longer visible
+Decrease all the font sizes used by a given number, if font size reaches zero, the text is no longer visible.
 
 ```python
 import altair as alt
@@ -200,10 +202,10 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Change categorical color schemes
 
-Change the default scale of all charts that uses a color parameter when encoding the chart and are shown by category
+Change the default scale of all charts that use a color parameter when encoding the chart and are shown by category.
 
-If you [set a scale](https://altair-viz.github.io/user_guide/customization.html#customizing-colors) like in Altair this
-scale has priority over this default color scheme
+If you [set a scale](https://altair-viz.github.io/user_guide/customization.html#customizing-colors) like in Vega-Altair, 
+this scale has priority over this default color scheme.
 
 ```python
 import altair as alt
@@ -234,10 +236,11 @@ chart = alt.Chart(source).mark_bar().encode(
 
 ### Change sequential color schemes
 
-Change the default scale of all charts that uses a color parameter when encoding the chart are shown by sequence
+Change the default scale of all charts that use a color parameter when encoding the chart are shown by sequence.
 
-If you [set a scale](https://altair-viz.github.io/user_guide/customization.html#customizing-colors) like in Altair this
-scale has priority over this default color scheme
+If you [set a scale](https://altair-viz.github.io/user_guide/customization.html#customizing-colors) like in Vega-Altair, 
+this
+scale has priority over this default color scheme.
 
 ```python
 import altair as alt
@@ -264,8 +267,9 @@ chart = alt.Chart(cars).mark_point().encode(
 
 ### Vega-altair way of defining a theme
 
-Creating a new theme is a built-in function in vega-altair all that is need it is a funtion that return a dict object
-with the appropriate keys and values defined in vega-lite, then register the theme and finally enabling it
+Creating a new theme is a built-in function in vega-altair all that is needed it is a function
+that returns a dict object
+with the appropriate keys and values defined in vega-lite, then register the theme and finally enable it
 
 ```python
 import altair as alt
@@ -306,15 +310,16 @@ alt.Chart(cars).mark_point().encode(
 
 ### Acceessilbe-theme way of defining a theme
 
-However, in this library we use a more direct and organized method, in this library there are several models defined
+However, in this library we use a more direct and organized method; in this library there are several models defined
 that correspond to what the vega-lite API expects.
-A simple example would be like this
+A simple example would be like this.
 
 ```python
 import altair as alt
 from vega_datasets import data
+from altair_easeviz.models import AxisModel, ConfigModel
 
-# Create new dictionary with the configurations for the axis
+# Create a new dictionary with the configurations for the axis
 axis_config = AxisModel(labelColor='#e7212f', titleColor='#e7212f').create_axis()
 
 # Create a new dictionary of configurations
@@ -411,10 +416,10 @@ create_accessible_scheme(base, 'bar-chart',
 
 ### Using Filler Pattern
 
-Filler patterns is a god way to help people with vision problems, we can use this feature with our
-create_accessible_scheme() function since the template that uses is charge with various color patterns at our disposal
-we only need to set them as our categorical color sheme.
-We use object to are related to the color in some of our color patterns since is a god way to help undertand what color
+Filler patterns is a god way to help people with vision problems; we can use this feature with our
+create_accessible_scheme() function since the template that uses is charge with various color patterns at our disposal, 
+we only need to set them as our categorical color scheme.
+We use an object that is related to the color in some of our color patterns, since it is a god way to help understand what color
 is looking
 
 Here is an example where we change the color scheme categorical of one of our themes, the theme filler_pattern_theme has
@@ -425,7 +430,6 @@ import altair as alt
 import pandas as pd
 from altair_easeviz import create_accessible_scheme
 from altair_easeviz.models import AccessibleTheme
-
 
 accessible_theme = AccessibleTheme()
 accessible_theme.change_categorical_scheme(
@@ -446,12 +450,12 @@ chart = alt.Chart(source).mark_bar().encode(
     xOffset="Group:N",
     color="Group:N"
 )
-create_accessible_scheme(chart,'patterns')
+create_accessible_scheme(chart, 'patterns')
 ```
 
 ![bar_chart_with_patterns.png](assets%2Fbar_chart_with_patterns.png)
 
-You can all the patterns avaible in the [API](p2-api.md)
+You can all the patterns available in the [API](p2-api.md)
 
 ## Generate description of a graph
 
@@ -462,16 +466,18 @@ But in order to be able to use this function is necessary to understand its requ
 The most important requirement is to have R running in the background were we must have installed the next libraries
 
 - Rserve, this is the key library we use as a bridge between Python and R
-- ggplot2, we use this to recreate the chart of Altair
+- ggplot2, we use this to recreate the chart of Vega-Altair
 - BrailleR, this is the core library that creates the descriptions of the chart
-- thematic is customatization library for ggplot2 similar to ours uses some of the same schemes we use
 
 After you have all the libraries installed, the last step is to run
-`        library(Rserve)
-Rserve()`
+
+```R
+library(Rserve)
+Rserve()
+```
 
 About the limitations of this function, that would be the number of charts available to run and the complexity of these.
-As the current version we only count with these:
+As the current version, we only count with these:
 
 - barchart
 - linechart

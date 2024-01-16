@@ -25,7 +25,8 @@ significantly enhance your understanding of the library's functionality and faci
 `class altair_easeviz.models.ModelTheme(name_theme: str, text_color: str, axis_color: str, mark_color:
 str,background_color: str, grid: bool)`
 
-This model helps to create easy new themes for Altair, it is with this model that we create the 4 themes we included.
+This model helps to create easy new themes for Vega-Altair, it is with this model that we create the 4 themes we
+included.
 
 **Parameters:**
 
@@ -132,19 +133,19 @@ Create and hold dict of type Mark describe it in types
 
 **Functions:**
 
-| Function                                    | Description                                                                                                               |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| get_theme()                                 | It returns a dict with all the config like the parameter config in the vega-lite specification                            |
-| get_name()                                  | Return the name of the theme                                                                                              |
-| change_background_color()                   | Change the background color and re register the theme in altair with the same name_theme                                  |
-| change_mark_color()                         | Change the mark color and re register the theme in altair with the same name_theme                                        |
-| change_text_color()                         | Change the text color and re register the theme in altair with the same name_theme                                        |
-| increase_font_size(number:int)              | Increases all values in font_size by the number given  and re register the theme in altair with the same name_theme       |
-| decrease_font_size(number:int)              | Decreases all values in font_size by the number given  and re register the theme in altair with the same name_theme       |
-| change_categorical_scheme(scheme:List[str]) | Replaces the list in colors['categorical'] by the given scheme  and re register the theme in altair                       |
-| change_sequential_scheme(scheme:List[str])  | Replaces the list in colors['sequential'] by the given scheme  and re register the theme in altair                        |
-| change_color_line(color_line)               | Replaces the value in colors['axis'] that define the color of the grid and axis lines and re register the theme in altair |
-| change_grid_show()                          | Switch beetwen tru or false if the grid is show                                                                           |
+| Function                                    | Description                                                                                                                    |
+|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| get_theme()                                 | It returns a dict with all the config like the parameter config in the vega-lite specification                                 |
+| get_name()                                  | Return the name of the theme                                                                                                   |
+| change_background_color()                   | Change the background color and re register the theme in Vega-Altair with the same name_theme                                  |
+| change_mark_color()                         | Change the mark color and re register the theme in Vega-Altair with the same name_theme                                        |
+| change_text_color()                         | Change the text color and re register the theme in Vega-Altair with the same name_theme                                        |
+| increase_font_size(number:int)              | Increases all values in font_size by the number given  and re register the theme in Vega-Altair with the same name_theme       |
+| decrease_font_size(number:int)              | Decreases all values in font_size by the number given  and re register the theme in Vega-Altair with the same name_theme       |
+| change_categorical_scheme(scheme:List[str]) | Replaces the list in colors['categorical'] by the given scheme  and re register the theme in Vega-Altair                       |
+| change_sequential_scheme(scheme:List[str])  | Replaces the list in colors['sequential'] by the given scheme  and re register the theme in Vega-Altair                        |
+| change_color_line(color_line)               | Replaces the value in colors['axis'] that define the color of the grid and axis lines and re register the theme in Vega-Altair |
+| change_grid_show()                          | Switch between tru or false if the grid is show                                                                                |
 
 ### ConfigModel
 
@@ -339,7 +340,7 @@ was meant to check if the kwargs passed were equal.
 
 **labelColor**: str, HexColor,[ColorName]
 
-The color of the legend label, can be in hex color code or regular color name.
+The color of the legend label can be in hex color code or regular color name.
 
 **labelFont**: str
 
@@ -355,7 +356,7 @@ The size of the legend symbol, in pixels.
 
 **titleColor**: str, HexColor,[ColorName]
 
-The color of the legend title, can be in hex color code or regular color name.
+The color of the legend title can be in hex color code or regular color name.
 
 **titleFont**: str
 
@@ -388,7 +389,7 @@ The padding, in pixels, between title and legend.
     class altair_easeviz.models.MarkShapeModel(**kwargs)
     class altair_easeviz.models.MarkTextModel(**kwargs)
 
-A model to hold all related mark parameters. Unlike other models the mark related models hold similar variables and all
+A model to hold all related mark parameters. Unlike other models, the mark related models hold similar variables and all
 are the
 
 **Parameters:**
@@ -442,7 +443,7 @@ The stroke width, in pixels.
 
 **Functions:**
 
-The function name varies in each model but follows a similar pattern. For example fot the MarkBarModel the function
+The function name varies in each model but follows a similar pattern. For example, for the MarkBarModel the function
 would be create_mark_bar().
 
 | Function           | Description                                                                                                        |
@@ -566,7 +567,7 @@ The stroke color.Defalut value: transparent
 
 ## Themes
 
-The themes provided in this library are based in the model ModelTheme where the only variations are the color used. The
+The themes provided in this library are based on the model ModelTheme where the only variations are the color used. The
 color schemes were inspired by the [Color Brewer] project and also check in [WAIM] contrast, so it follows the
 regulations of the WCAG2.0
 
@@ -641,9 +642,10 @@ Our library beside the themes and models offers two functions that can come hand
 ### create_accesible_scheme()
 
 This function works similar like the altair.Chart.save() function but offers more options for the user in the HTML being
-able to change the color palette, increase/decrese the font size and size of the chart. Also, will show a description if
-given in HTML
-All this function also work with keyboard navigation so can be used for more people
+able to change the color palette, increase/decrease the font size and size of the chart. Also, will show a description
+if
+given in HTML.
+All this function also work with keyboard navigation so can be used for more people.
 
 ```python
 def create_accessible_scheme(chart: Chart, filename: str = 'test', description: str = None):
@@ -654,8 +656,9 @@ def create_accessible_scheme(chart: Chart, filename: str = 'test', description: 
 
 **chart** : altair.Chart
 
-Any Chart object of Altair works to be rendered, but not all Charts can used the functions described in the HTML these
-include LayerChart, HConcatChart, VConcatChart, FacetChart, RepeatChart
+Any Chart object of Vega-Altair works to be rendered, but not all Charts can be used the functions described in the HTML
+these
+include LayerChart, HConcatChart, VConcatChart, FacetChart, RepeatChart.
 
 **filename**: str
 
@@ -681,7 +684,7 @@ def generate_description(chart: Chart, type_chart: str, axis_x: List, axis_y: Li
 
 **chart** : altair.Chart
 
-Any Chart object of Altair works to be used
+Any Chart object of Vega-Altair works to be used
 
 **type_chart** : str, ['barchart','scatterplot', 'linechart','piechart']
 
@@ -728,9 +731,9 @@ The following are the available color palettes in tokens these can be found in c
 
 When using our function create_accesible_scheme() you can use any of the next patterns with the ID:
 
-This first batch of a pattern follows the technique of associatiing a color to an object, we choose the most simple
+This first batch of a pattern follows the technique of associatiing a color to an object; we choose the most simple
 color
-palette that contains the basic colors
+palette that contains the basic colors.
 
 - red-heart
 
@@ -768,7 +771,7 @@ palette that contains the basic colors
 
 This next batch contains different patterns not following any logic, these were provided by the Irine
 Rios [patterns fills project](https://iros.github.io/patternfills/) and the color scheme behind is the same used in the
-accessible theme
+accessible theme.
 
 ![grey-wrench pattern](assets/grey-wrench.png)
 
@@ -806,7 +809,7 @@ accessible theme
 
 ## Tokens
 
-The tokens python files contains resources of colors, font sizes, spacing sizes, color palettes, etc.
+The tokens python file contains resources of colors, font sizes, spacing sizes, color palettes, etc.
 
 A good example would be to import a color palette and use it in a chart
 
@@ -820,8 +823,8 @@ color_palette = COLORS['schemes']['categorical']['ibm']  # Return a list of colo
 
 [Typing](https://docs.python.org/3/library/typing.html) in python was used to ensure and give hints in future
 developments of what to expect in a variable a good example would be that we used this to highlight how a parameter in a
-vega-lite specification should have, does not affect the compiling process but helps to develop , the next is an example
-of what should have a Config type
+vega-lite specification should have, does not affect the compiling process but helps to develop, the next is an example
+of what should have a Config type.
 
 ```python
 class Config(TypedDict, total=False):

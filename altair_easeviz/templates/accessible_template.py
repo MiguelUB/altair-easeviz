@@ -58,7 +58,6 @@ accesible_template = """
 <!-- Color Patterns -->
 <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
-
         <!-- Red Heart-->
         <pattern id="red-heart" patternUnits="userSpaceOnUse" width="24" height="24">
             <g stroke-width="0">
@@ -72,7 +71,7 @@ accesible_template = """
                       stroke-linejoin="round"></path>
             </g>
         </pattern>
-        <!-- Blue  Rain-->
+        <!-- Blue Rain-->
         <pattern id="blue-rain" patternUnits="userSpaceOnUse" width="24" height="24">
             <g stroke-width="0">
                 <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="#377eb8" strokewidth="0"/>
@@ -143,7 +142,6 @@ accesible_template = """
         <!-- Brown Chocolate-->
         <pattern id="brown-chocolate" patternUnits="userSpaceOnUse" width="24" height="24">
             <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="#a65628" strokewidth="0"></rect>
-            </g>
             <g stroke-linecap="round" stroke-linejoin="round"></g>
             <g>
                 <path d="M9 8L9 8.01" stroke="#333333" stroke-width="2" stroke-linecap="round"
@@ -176,7 +174,6 @@ accesible_template = """
         <!-- Grey Wrench -->
         <pattern id="grey-wrench" patternUnits="userSpaceOnUse" width="24" height="24">
             <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="#999999" strokewidth="0"></rect>
-            </g>
             <g stroke-linecap="round" stroke-linejoin="round"></g>
             <g>
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -196,18 +193,18 @@ accesible_template = """
             <rect width="10" height="10" fill="#D95F02"/>
             <rect x="0" y="0" width="10" height="3" fill="white"/>
         </pattern>
-        <!-- Purple  Diagonal Strips right to left -->
+        <!-- Purple Diagonal Strips right to left -->
         <pattern id="purple-diagonal-rl" patternUnits="userSpaceOnUse" width="10" height="10">
             <rect width="10" height="10" fill="#7570B3"/>
             <path d="M-1,1 l2,-2            M0,10 l10,-10            M9,11 l2,-2" stroke="white" stroke-width="1"/>
         </pattern>
-        <!-- Pink Diagonal Strips  left to right -->
+        <!-- Pink Diagonal Strips left to right -->
         <pattern id="pink-diagonal-lr" patternUnits="userSpaceOnUse" width="10" height="10">
             <rect width="10" height="10" fill="#E7298A"/>
             <path d="M-1,1 l2,2 M0,0 l10,10 M9,9 l2,2" stroke="white" stroke-width="1"/>
         </pattern>
-        <!-- Green Dots -->
-        <pattern id="green-dots" patternUnits="userSpaceOnUse" width="10" height="10">
+        <!-- Green Dots Inverted-->
+        <pattern id="green-dots-inv" patternUnits="userSpaceOnUse" width="10" height="10">
             <rect width="10" height="10" fill="#66A61E"/>
             <rect x="0" y="0" width="5" height="5" fill="white"/>
         </pattern>
