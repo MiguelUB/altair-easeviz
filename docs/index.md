@@ -37,7 +37,7 @@ After installation, the next built-in themes should be ready to use:
 - accessible_theme
 - dark_accessible_theme
 - filler_pattern_theme
-- print_friendly_theme
+- print_theme
 
 You can enable them, using:
 
