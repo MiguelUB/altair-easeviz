@@ -2,7 +2,8 @@
 
 ## Overview
 
-This Python library is dedicated to providing resources for Vega-Altair, with the aim of enhancing the creation of
+This Python library is dedicated to providing resources for [Vega-Altair](https://altair-viz.github.io/index.html), with
+the aim of enhancing the creation of
 improved
 and more accessible graphs. The development of this library involved a thorough exploration of both the Altair and
 Vega-Lite APIs.
@@ -11,7 +12,7 @@ For programmers, the library offers a suite of tools, including utilities for cr
 accessible themes, and description generators (Powered by BrailleR).
 
 From a user perspective, the library facilitates limited customization of the graph, allowing choices such as color
-scheme selection, text size adjustment, and graph size modification. 
+scheme selection, text size adjustment, and graph size modification.
 This is due to a function that creates an HTML using a chart as a parameter.
 
 The overarching concept behind the library mirrors that of Vega-Altair, the majority of graph configurations and details
