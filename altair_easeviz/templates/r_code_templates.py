@@ -7,7 +7,7 @@ def r_code_bar_chart(x_axis, y_axis, chart_title, x_axis_title, y_axis_title):
     :param chart_title: The title of the chart
     :param y_axis_title: Title of X axis
     :param x_axis_title: Title of Y axis
-    :return: A string that describe the R code
+    :return: A string that describes the R code
     """
     x_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in x_axis)
     y_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in y_axis)
@@ -79,7 +79,7 @@ def r_code_scatter_plot(x_axis, y_axis, chart_title, x_axis_title, y_axis_title)
     :param chart_title: The title of the chart
     :param x_axis_title: Title of X axis
     :param y_axis_title: Title of Y axis
-    :return: A string that describe the R code
+    :return: A string that describes the R code
     """
     x_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in x_axis)
     y_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in y_axis)
@@ -120,7 +120,7 @@ def r_code_line_chart(x_axis, y_axis, chart_title, x_axis_title, y_axis_title):
     :param chart_title: The title of the chart
     :param x_axis_title: Title of X axis
     :param y_axis_title: Title of Y axis
-    :return: A string that describe the R code
+    :return: A string that describes the R code
     """
     x_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in x_axis)
     y_axis = ', '.join(f'"{elemento}"' if isinstance(elemento, str) else str(elemento) for elemento in y_axis)

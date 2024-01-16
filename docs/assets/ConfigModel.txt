@@ -1,0 +1,125 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype polyline
+
+
+
+
+
+
+class node0 as "ConfigModel" {
+   axis: AxisModel
+   background: str
+   header: HeaderModel
+   legend: LegendModel
+   range: RangeModel
+   title: TitleModel
+   view: ViewModel
+      __init__(self, **kwargs):
+   create_config(self): dict
+   create_full_config(self):dict
+}
+class node2 as "AxisModel" {
+   _required_params: dict
+   domain: bool
+   domainColor: str
+   grid: bool
+   gridCap: str
+   gridColor: str
+   gridDash: List
+   gridWidth: float
+   labelColor: str
+   labelFont: str
+   labelFontSize: int
+   labelPadding: int
+   tickColor: str
+   tickOpacity: float
+   ticks: bool
+   tickSize: int
+   titleColor: str
+   titleFont: str
+   titleFontSize:int
+   __init__(self, **kwargs):
+   create_axis(self): dict
+}
+
+
+class node3 as "HeaderModel" {
+   _required_params: dict
+   labelColor: str
+   labelFont: str
+   labelFontSize: int
+   titleColor: str
+   titleFont: str
+   titleFontSize: int
+   __init__(self, **kwargs):
+   create_header(self): dict
+}
+
+
+
+class node4 as "LegendModel" {
+   _required_params: dict
+   labelColor: str
+   labelFont: str
+   labelFontSize: int
+   symbolSize: int
+   titleColor: str
+   titleFont: str
+   titleFontSize: int
+   titlePadding: int
+   __init__(self, **kwargs):
+   create_legend(self): dict
+}
+class node5 as "RangeModel" {
+    category:List
+    diverging: List
+    heatMap: List
+    ramp: List
+   __init__(self, **kwargs):
+   create_range(self): dict
+}
+
+
+class node6 as "TitleModel" {
+   _required_params: dict
+   anchor: str
+   color: str
+   font: str
+   fontSize: int
+   fontWeight: str
+   offset: int
+   subtitleColor: str
+   subtitleFontSize: int
+    __init__(self, **kwargs):
+   create_title(self): dict
+}
+
+
+
+
+class node7 as "ViewModel" {
+   _required_params: dict
+   continuousHeight: int
+   continuousWidth: int
+   stroke: str
+    __init__(self, **kwargs):
+   create_view(self): dict
+}
+
+
+node0 -right-> node2
+node0 --> node3
+node0 -left-> node4
+node0 --> node5
+node0 --> node6
+node0 --> node7
+
+
+
+
+
+
+@enduml
