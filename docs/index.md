@@ -61,6 +61,7 @@ installed the libraries:
 
 - BrailleR
 - ggplot2
+- Rserve
 
 ## Getting Help
 
