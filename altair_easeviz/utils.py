@@ -27,7 +27,7 @@ def create_accessible_scheme(chart: Chart, filename: str = 'test', description: 
         description_given = True
         description_html = description_chart.replace("\n", "<br>")
     else:
-        description_chart = "This graph does not have a description set"
+        description_chart = "This is a graph made with vega-altair and altair-easeviz"
         description_html = None
 
     if isinstance(chart, VConcatChart) or isinstance(chart, HConcatChart) or \

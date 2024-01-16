@@ -1,0 +1,52 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype polyline
+
+
+
+class node1 as "ModelTheme" {
+    name_theme: str
+    colors: dict
+    spacing: dict
+    grid: bool
+    font_size: dict
+    config: ConfigModel
+
+    axis_config: AxisModel
+    header_config: HeaderModel
+    legend_config: LegendModel
+    range_config: RangeModel
+    title_config: TitleModel
+    view_config: ViewModel
+
+    arc_config: MarkModel
+    bar_config: MarkModel
+    line_config: MarkModel
+    path_config: MarkModel
+    point_config: MarkModel
+    rect_config: MarkModel
+    rule_config: MarkModel
+    shape_config: MarkModel
+    text_config: MarkModel
+
+   __init__(self, name_theme: str, text_color: str, axis_color: str, mark_color: str,
+                 background_color: str, grid: bool):
+   get_theme(self): dict
+   getName(self): str
+   change_background_color(self, new_color): void
+   change_mark_color(self, new_color): void
+   change_text_color(self, new_color): void
+   increse_font_size(self, number: int): void
+   decrease_font_size(self, number: int): void
+   change_categorical_scheme(self, scheme: List[str]): void
+   change_sequential_scheme(self, scheme: List[str]): void
+   change_color_line(self, color_line): void
+   change_grid_show(self): void
+}
+
+
+
+
+@enduml

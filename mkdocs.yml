@@ -19,19 +19,20 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: orange
-      accent: deep orange
+      primary: custom
+      accent: custom
     - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: deep purple
-      accent: deep purple
-
+      primary: orange
+      accent: amber
+extra_css:
+  - stylesheets/extra.css
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/MiguelUB
+      link: https://github.com/MiguelUB/altair-easeviz
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/miguel-huayllas/
 
