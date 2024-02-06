@@ -1,5 +1,11 @@
 # About
 
+## Collaborators
+
+This project was developed alongside [Dr. Mireia Ribera ](https://www.eina.cat/es/conoce-eina/profesorado/mireia-ribera)as an advisor on topics related to accessibility. 
+
+The project was developed as the final project for the [University of Barcelona](https://mat.ub.edu/grauinformatica/) in the degree of Computer Science.
+
 ## Roadmap
 
 ### First approach
