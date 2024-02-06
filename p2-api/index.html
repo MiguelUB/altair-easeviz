@@ -1,0 +1,1572 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://miguelub.github.io/altair-easeviz/p2-api/">
+      
+      
+        <link rel="prev" href="../p1-user_guide/">
+      
+      
+        <link rel="next" href="../p3-examples/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>Api - Altair EaseViz</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="dark" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Altair EaseViz" class="md-header__button md-logo" aria-label="Altair EaseViz" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Altair EaseViz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Api
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../p1-user_guide/" class="md-tabs__link">
+        
+  
+    
+  
+  User Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Api
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../p3-examples/" class="md-tabs__link">
+        
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../p4-release_notes/" class="md-tabs__link">
+        
+  
+    
+  
+  Release Notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../p5-about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Altair EaseViz" class="md-nav__button md-logo" aria-label="Altair EaseViz" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Altair EaseViz
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1-user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Api
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Api
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeltheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      ModelTheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConfigModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axismodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      AxisModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headermodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      HeaderModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legendmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      LegendModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      MarkModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rangemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RangeModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titlemodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      TitleModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      ViewModel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Themes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessible_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      accessible_theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark_accessible_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      dark_accessible_theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filler_pattern_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      filler_pattern_theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print_friendly_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      print_friendly_theme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-Level Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top-Level Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_accesible_scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_accesible_scheme()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      generate_description()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color schemes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color schemes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color palettes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color patterns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3-examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4-release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5-about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api">Api</h1>
+<p>Within this page, you will discover comprehensive specifications and intricacies regarding the models utilized and
+the functions created. It is advisable, however, to reference the "<a href="../">Getting Started</a>" and "<a href="../p1-user_guide/">Examples</a>" sections for a
+more
+streamlined comprehension of the library. These sections provide practical insights and usage scenarios that can
+significantly enhance your understanding of the library's functionality and facilitate a smoother initiation process.</p>
+<h2 id="models">Models</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#modeltheme">ModelTheme</a></td>
+<td>This models contains a Config model, some basic variables of color and functions to change the theme.</td>
+</tr>
+<tr>
+<td><a href="#configmodel">ConfigModel</a></td>
+<td>A model with the main purpose is to hold and create a dict to hold all vega-lite specification, uses other models to be constructed.</td>
+</tr>
+<tr>
+<td><a href="#axismodel-">AxisModel</a></td>
+<td>Model that contains some of the parameters of the 'axis' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#headermodel">HeaderModel</a></td>
+<td>Model that contains some of the parameters of the 'header' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#legendmodel">LegendModel</a></td>
+<td>Model that contains some of the parameters of the 'legend' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#markmodel">MarkModel</a></td>
+<td>Model that contains some of the parameters of the 'axis' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#rangemodel">RangeModel</a></td>
+<td>Model that contains 'category','diverging', 'heatmap' and 'ramp' parameters of the 'range' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#titlemodel">TitleModel</a></td>
+<td>Model that contains some of the parameters of the 'title' in  vega-lite specification</td>
+</tr>
+<tr>
+<td><a href="#viewmodel">ViewModel</a></td>
+<td>Model that contains some of the parameters of the 'view' in  vega-lite specification</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modeltheme">ModelTheme</h3>
+<p><code>class altair_easeviz.models.ModelTheme(name_theme: str, text_color: str, axis_color: str, mark_color:
+str,background_color: str, grid: bool)</code></p>
+<p>This model helps to create easy new themes for Vega-Altair, it is with this model that we create the 4 themes we
+included.</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>name_theme</strong> : str</p>
+<p>The name that be registered in the altair.themes</p>
+<p><strong>text_color</strong> : str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Define the color of all the text of the chart included the mark Text</p>
+<p><strong>axis_color</strong>:  str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Define the color of the grid, axis and mark Lines of the chart</p>
+<p><strong>mark_color</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Define the color of all marks in the chart</p>
+<p><strong>background_color</strong>:str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Define the color of the background of the chart</p>
+<p><strong>grid</strong>: bool</p>
+<p>Define if the chart will show its grid or not</p>
+<p><strong>colors</strong>: Colors, dict</p>
+<p>A dict that holds all the colors used in the model
+arc,axis,background,text,mark,scheme{categorical,diverging,sequential}</p>
+<p><strong>font_size</strong>: dict</p>
+<p>Holds the three sizes we use in the graph, is used to give a hierarchy order size to the text</p>
+<p><strong>spacing</strong>: dict</p>
+<p>Holds the three sizes we use in the graph for spacing</p>
+<p><strong>config</strong>: dict</p>
+<p>Creates a ConfigModel and holds dict with all the configurations described below following the vega-lite specification</p>
+<p><strong>axis_config</strong>: Axis, dict</p>
+<p>Create and holds dict of type Axis describe it in types</p>
+<p><strong>header_config</strong>: Header, dict</p>
+<p>Create and hold dict of type Header describe it in types</p>
+<p><strong>legend_config</strong>: Legend, dict</p>
+<p>Create and holds dict of type Legend describe it in types</p>
+<p><strong>title_config</strong>: Title, dict</p>
+<p>Create and hold dict of type Title describe it in types</p>
+<p><strong>view_config</strong>: View, dict</p>
+<p>Create and hold dict of type View describe it in types</p>
+<p><strong>range_config</strong>: ScaleRange, dict</p>
+<p>Create and hold dict of type ScaleRange describe it in types</p>
+<p><strong>arc_config</strong>: Mark, dict</p>
+<p>Create and holds dict of type Mark describe it in types</p>
+<p><strong>bar_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>line_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>path_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>point_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>rect_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>rule_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>shape_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>text_config</strong>: Mark, dict</p>
+<p>Create and hold dict of type Mark describe it in types</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_theme()</td>
+<td>It returns a dict with all the config like the parameter config in the vega-lite specification</td>
+</tr>
+<tr>
+<td>get_name()</td>
+<td>Return the name of the theme</td>
+</tr>
+<tr>
+<td>change_background_color()</td>
+<td>Change the background color and re register the theme in Vega-Altair with the same name_theme</td>
+</tr>
+<tr>
+<td>change_mark_color()</td>
+<td>Change the mark color and re register the theme in Vega-Altair with the same name_theme</td>
+</tr>
+<tr>
+<td>change_text_color()</td>
+<td>Change the text color and re register the theme in Vega-Altair with the same name_theme</td>
+</tr>
+<tr>
+<td>increase_font_size(number:int)</td>
+<td>Increases all values in font_size by the number given  and re register the theme in Vega-Altair with the same name_theme</td>
+</tr>
+<tr>
+<td>decrease_font_size(number:int)</td>
+<td>Decreases all values in font_size by the number given  and re register the theme in Vega-Altair with the same name_theme</td>
+</tr>
+<tr>
+<td>change_categorical_scheme(scheme:List[str])</td>
+<td>Replaces the list in colors['categorical'] by the given scheme  and re register the theme in Vega-Altair</td>
+</tr>
+<tr>
+<td>change_sequential_scheme(scheme:List[str])</td>
+<td>Replaces the list in colors['sequential'] by the given scheme  and re register the theme in Vega-Altair</td>
+</tr>
+<tr>
+<td>change_color_line(color_line)</td>
+<td>Replaces the value in colors['axis'] that define the color of the grid and axis lines and re register the theme in Vega-Altair</td>
+</tr>
+<tr>
+<td>change_grid_show()</td>
+<td>Switch between tru or false if the grid is show</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configmodel">ConfigModel</h3>
+<p><code>class altair_easeviz.models.ConfigModel(**kwargs)</code></p>
+<p>The configuration model, resembling other models outlining the vega-lite specification, utilizes keyword arguments (
+kwargs) to accommodate an arbitrary number of parameters, should the need arise. However, in consideration of the Config
+type and the presumption that developers may not explicitly define each parameter, the model inherently incorporates a
+predetermined set of default parameters.</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>axis</strong> : dict</p>
+<p>A dict that holds keys and values of the axis parameter valids in the vega-lite specification</p>
+<p><strong>legend</strong> : dict</p>
+<p>A dict that holds keys and values of the legend parameter valids in the vega-lite specification</p>
+<p><strong>range</strong> : dict</p>
+<p>A dict that holds keys and values of the range parameter valids in the vega-lite specification</p>
+<p><strong>background</strong> : str</p>
+<p>A string that holds the value of the background of the chart</p>
+<p><strong>header</strong> : dict</p>
+<p>A dict that holds keys and values of the header parameter valids in the vega-lite specification</p>
+<p><strong>title</strong> : dict</p>
+<p>A dict that holds keys and values of the title parameter valids in the vega-lite specification</p>
+<p><strong>view</strong> : dict</p>
+<p>A dict that holds keys and values of the view parameter valids in the vega-lite specification</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_config()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Config type(dict) and return it</td>
+</tr>
+<tr>
+<td>create_full_config()</td>
+<td>A function that uses all the parameters passed i the kwargs and creates a Config type(dict) and return it</td>
+</tr>
+<tr>
+<td><strong>str</strong>()</td>
+<td>It return a string of the function create_full_config()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="axismodel">AxisModel</h3>
+<p><code>class altair_easeviz.models.AxisModel(**kwargs)</code></p>
+<p>A model to hold all related axis parameters</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>domain</strong> : bool</p>
+<p>A boolean flag indicating if the domain (the axis baseline) should be included as part of the axis.</p>
+<p><strong>domain</strong>: str, ColorName, HexColor</p>
+<p>Color of axis domain line.</p>
+<p><strong>domainColor</strong> : str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Color of axis domain line.</p>
+<p><strong>grid</strong>: bool</p>
+<p>A boolean flag indicating if grid lines should be included as part of the axis</p>
+<p><strong>gridCap</strong>: str</p>
+<p>The stroke cap for grid lines’ ending style. One of "butt", "round" or "square".</p>
+<p><strong>gridColor</strong> : str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Color of gridlines.</p>
+<p><strong>gridDash</strong>:[[condition, value]]</p>
+<p>An array of alternating [stroke, space] lengths for dashed grid lines.</p>
+<p><strong>gridWidth</strong>:float</p>
+<p>The grid width, in pixels.</p>
+<p><strong>labelColor</strong> :str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>The color of the tick label can be in hex color code or regular color name.</p>
+<p><strong>labelFont</strong>:str</p>
+<p>The font of the tick label.</p>
+<p><strong>labelFontSize</strong>:int</p>
+<p>The font size of the tick labels.</p>
+<p><strong>labelPadding</strong>:float</p>
+<p>The padding in pixels between labels and ticks.</p>
+<p><strong>tickColor</strong> :str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>The color of the axis’s tick.</p>
+<p><strong>tickOpacity</strong>:float
+Opacity of the ticks.
+<strong>ticks</strong>:bool
+Boolean value that determines whether the axis should include ticks.
+<strong>tickSize</strong>:int
+The size in pixels of axis ticks.
+<strong>titleColor</strong> :str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>
+Color of the title, can be in hex color code or regular color name.
+<strong>titleFont</strong>:str
+Font of the title. (e.g., "Helvetica Neue" ).
+<strong>titleFontSize</strong>:int
+Font size of the title.</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_axis()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Axis type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="headermodel">HeaderModel</h3>
+<p><code>class altair_easeviz.models.HeaderModel(**kwargs)</code></p>
+<p>A model to hold all related header parameters</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>labelColor</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>The color of the header label can be in hex color code or regular color name.</p>
+<p><strong>labelFont</strong>: str</p>
+<p>The font of the header label.</p>
+<p><strong>labelFontSize</strong>: int</p>
+<p>The font size of the header label, in pixels.</p>
+<p><strong>titleColor</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Color of the header title can be in hex color code or regular color name.</p>
+<p><strong>titleFont</strong>: str
+Font of the header title. (e.g., "Helvetica Neue" ).</p>
+<p><strong>titleFontSize</strong>: int</p>
+<p>The font style of the header title.</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_header()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Header type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="legendmodel">LegendModel</h3>
+<p><code>class altair_easeviz.models.HeaderModel(**kwargs)</code></p>
+<p>A model to hold all related header parameters</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>labelColor</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>The color of the legend label can be in hex color code or regular color name.</p>
+<p><strong>labelFont</strong>: str</p>
+<p>The font of the legend label.</p>
+<p><strong>labelFontSize</strong>: int</p>
+<p>The font size of legend label.</p>
+<p><strong>symbolSize</strong>: int</p>
+<p>The size of the legend symbol, in pixels.</p>
+<p><strong>titleColor</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>The color of the legend title can be in hex color code or regular color name.</p>
+<p><strong>titleFont</strong>: str</p>
+<p>The font of the legend title.</p>
+<p><strong>titleFontSize</strong>: int</p>
+<p>The font size of the legend title.</p>
+<p><strong>titlePadding</strong>: int</p>
+<p>The padding, in pixels, between title and legend.</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_legend()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Legend type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="markmodel">MarkModel</h3>
+<div class="highlight"><pre><span></span><code>class altair_easeviz.models.MarkArkModel(**kwargs)
+class altair_easeviz.models.MarkBarModel(**kwargs)
+class altair_easeviz.models.MarkLineModel(**kwargs)
+class altair_easeviz.models.MarkLineModel(**kwargs)
+class altair_easeviz.models.MarkPathModel(**kwargs)
+class altair_easeviz.models.MarkPointModel(**kwargs)
+class altair_easeviz.models.MarkRectModel(**kwargs)
+class altair_easeviz.models.MarkRuleModel(**kwargs)
+class altair_easeviz.models.MarkShapeModel(**kwargs)
+class altair_easeviz.models.MarkTextModel(**kwargs)
+</code></pre></div>
+<p>A model to hold all related mark parameters. Unlike other models, the mark related models hold similar variables and all
+are the</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>color</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Default color. The fill and stroke properties have higher precedence than color and will override color.</p>
+<p><strong>fill</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Default fill color.</p>
+<p><strong>filled</strong>: bool</p>
+<p>Whether the mark’s color should be used as fill color instead of stroke color.</p>
+<p><strong>font</strong>: str</p>
+<p>The typeface to set the text in (e.g., "Helvetica Neue" ).</p>
+<p><strong>fontSize</strong>: int</p>
+<p>The font size, in pixels.</p>
+<p><strong>shape</strong>: str</p>
+<p>Shape of the point marks. Supported values include:</p>
+<ul>
+<li>
+<p>plotting shapes: "circle", "square", "cross", "diamond", "triangle-up", "triangle-down", "triangle-right", or "
+  triangle-left".</p>
+</li>
+<li>
+<p>the line symbol "stroke"</p>
+</li>
+<li>
+<p>centered directional shapes "arrow", "wedge", or "triangle"</p>
+</li>
+<li>
+<p>a custom SVG path string (For correct sizing, custom shape paths should be defined within a square bounding box with
+  coordinates ranging from -1 to 1 along both the x and y dimensions.)</p>
+</li>
+</ul>
+<p><strong>stroke</strong>: str, HexColor,<a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Default stroke color.</p>
+<p><strong>strokeWidth</strong>: float</p>
+<p>The stroke width, in pixels.</p>
+<p><strong>Functions:</strong></p>
+<p>The function name varies in each model but follows a similar pattern. For example, for the MarkBarModel the function
+would be create_mark_bar().</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_name_mark()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Mark type( dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rangemodel">RangeModel</h3>
+<p><code>class altair_easeviz.models.RangeModel(**kwargs)</code></p>
+<p>A model to hold all related header parameters</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>category</strong>: List(str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>)</p>
+<p>Default color scheme for categorical data.</p>
+<p><strong>diverging</strong>: List(str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>)</p>
+<p>Default color scheme for diverging quantitative ramps.</p>
+<p><strong>heatmap</strong>: List(str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>)</p>
+<p>Default color scheme for quantitative heatmaps.</p>
+<p><strong>ramp</strong>: List(str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>)</p>
+<p>Default color scheme for sequential quantitative ramps.</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_range()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Range type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="titlemodel">TitleModel</h3>
+<p><code>class altair_easeviz.models.TitleModel(**kwargs)</code></p>
+<p>A model to hold all related title parameters</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>anchor</strong>: str</p>
+<p>The anchor position for placing the title and subtitle text. One of "start", "middle", or "end". For example, with an
+orientation of top these anchor positions map to a left-, center-, or right-aligned title.
+Default "star"</p>
+<p><strong>color</strong>: str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Text color for title text.</p>
+<p><strong>font</strong>: str</p>
+<p>Font name for title text.</p>
+<p><strong>fontSize</strong>: int</p>
+<p>Font style for title text.</p>
+<p><strong>fontWeight</strong>: str, ‘normal’, ‘bold’, ‘lighter’, ‘bolder’, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
+<p>Font weight for title text. This can be either a string (e.g "bold", "normal" ) or a number ( 100, 200, 300, …, 900
+where "normal" = 400 and "bold" = 700 ).</p>
+<p><strong>offset</strong>: int</p>
+<p>The orthogonal offset in pixels by which to displace the title group from its position along the edge of the chart.</p>
+<p><strong>subtitleColor</strong>: str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a></p>
+<p>Text color for subtitle text.</p>
+<p><strong>subtitleFontSize</strong>: int</p>
+<p>Font size in pixels for subtitle text.</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_title()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a Title type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="viewmodel">ViewModel</h3>
+<p><code>class altair_easeviz.models.ViewModel(**kwargs)</code></p>
+<p>A model to hold all related view parameters</p>
+<p><strong>Parameters:</strong></p>
+<p>_<strong>required_params</strong>: dict</p>
+<p>A dict that holds in keys the variables we use in this model and in the value holds the type that uses the variable this
+was meant to check if the kwargs passed were equal.</p>
+<p><strong>continuousHeight</strong>: int</p>
+<p>The default height when the plot has a continuous y-field for x or latitude, or has arc marks. Default value: 300</p>
+<p><strong>continuousWidth</strong>: int</p>
+<p>The default width when the plot has a continuous field for x or longitude, or has arc marks.
+Default value: 400</p>
+<p><strong>stroke</strong>: str, HexColor, <a href="https://altair-viz.github.io/user_guide/generated/core/altair.ColorName.html#altair.ColorName">ColorName</a>
+The stroke color.Defalut value: transparent</p>
+<p><strong>Functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_view()</td>
+<td>A function that uses all the parameters describe in _required_params and creates a View type(dict) and returns it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="themes">Themes</h2>
+<p>The themes provided in this library are based on the model ModelTheme where the only variations are the color used. The
+color schemes were inspired by the <a href="https://colorbrewer2.org/#type=qualitative&amp;scheme=Dark2&amp;n=3">Color Brewer</a> project and also check in <a href="https://webaim.org/resources/contrastchecker/">WAIM</a> contrast, so it follows the
+regulations of the WCAG2.0</p>
+<h3 id="accessible_theme">accessible_theme</h3>
+<p>The theme uses a white background with dark text and axis, the palette of colors consists of colors that vary its hue,
+so it can be distinguished</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">AccessibleTheme</span><span class="p">(</span><span class="n">ModelTheme</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;accessible_theme&#39;</span><span class="p">,</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                         <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">][</span><span class="s1">&#39;30&#39;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;white&quot;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="dark_accessible_theme">dark_accessible_theme</h3>
+<p>The theme uses a dark background with white text and axis enhancing that a light version the palette of colors uses a
+variation in illumination, so it can be distinguished</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">DarkAccessibleTheme</span><span class="p">(</span><span class="n">ModelTheme</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;dark_accessible_theme&#39;</span><span class="p">,</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;white&quot;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;white&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                         <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">][</span><span class="s1">&#39;30&#39;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;schemes&quot;</span><span class="p">][</span><span class="s1">&#39;categorical&#39;</span><span class="p">][</span><span class="s1">&#39;paired&#39;</span><span class="p">])</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">def</span> <span class="nf">change_categorical_scheme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scheme</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span><span class="n">scheme</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="filler_pattern_theme">filler_pattern_theme</h3>
+<p>This theme uses a white background and dark text and axis, its particularity comes in is color palette, the color
+palette follows the same reason of changing its hue but also adds a filler pattern, so the marks can be more visible
+between themselves
+This is possible to do only with our [create_accessible_scheme()] function since it preloads svg in the HTML to be used</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">FillerPatternTheme</span><span class="p">(</span><span class="n">ModelTheme</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;filler_pattern_theme&#39;</span><span class="p">,</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                         <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">][</span><span class="s1">&#39;30&#39;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;white&quot;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            <span class="p">[</span><span class="s2">&quot;url(#red-heart)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#blue-rain)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#green-leaf)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#purple-grapes)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#orange-orange)&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>             <span class="s2">&quot;url(#yellow-star)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#brown-chocolate)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#pink-donut)&quot;</span><span class="p">,</span> <span class="s2">&quot;url(#grey-wrench)&quot;</span><span class="p">,</span> <span class="p">])</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">def</span> <span class="nf">change_categorical_scheme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scheme</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span><span class="n">scheme</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="print_friendly_theme">print_friendly_theme</h3>
+<p>The theme is meant to work if the graph ever is printed and photocopied on a gray scale. Does not follow the WCAG2.0
+regulations</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span> <span class="nc">PrintFriendlyTheme</span><span class="p">(</span><span class="n">ModelTheme</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;print_theme&#39;</span><span class="p">,</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                         <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">][</span><span class="s1">&#39;30&#39;</span><span class="p">],</span> <span class="n">COLOR_PRIMITIVES</span><span class="p">[</span><span class="s2">&quot;white&quot;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span><span class="n">COLORS</span><span class="p">[</span><span class="s2">&quot;schemes&quot;</span><span class="p">][</span><span class="s1">&#39;categorical&#39;</span><span class="p">][</span><span class="s1">&#39;set3&#39;</span><span class="p">])</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">def</span> <span class="nf">change_categorical_scheme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scheme</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">change_categorical_scheme</span><span class="p">(</span><span class="n">scheme</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="top-level-functions">Top-Level Functions</h2>
+<p>Our library beside the themes and models offers two functions that can come handy to make accessible chart faster</p>
+<h3 id="create_accesible_scheme">create_accesible_scheme()</h3>
+<p>This function works similar like the altair.Chart.save() function but offers more options for the user in the HTML being
+able to change the color palette, increase/decrease the font size and size of the chart. Also, will show a description
+if
+given in HTML.
+All this function also work with keyboard navigation so can be used for more people.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">create_accessible_scheme</span><span class="p">(</span><span class="n">chart</span><span class="p">:</span> <span class="n">Chart</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<p><strong>chart</strong> : altair.Chart</p>
+<p>Any Chart object of Vega-Altair works to be rendered, but not all Charts can be used the functions described in the HTML
+these
+include LayerChart, HConcatChart, VConcatChart, FacetChart, RepeatChart.</p>
+<p><strong>filename</strong>: str</p>
+<p>The name of the HTML to create</p>
+<p><strong>description</strong>: str</p>
+<p>A description for the chart given, if given it will be included in the aria-label of the chart and shown in the HTML in
+a div</p>
+<h3 id="generate_description">generate_description()</h3>
+<p>This function can generate a description for a given chart, it's powered by BrailleR, so it has prerequisite to be used
+and that is to have R installed with the appropriate libraries
+It works recreating the chart in R, so it can only use simple charts</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">generate_description</span><span class="p">(</span><span class="n">chart</span><span class="p">:</span> <span class="n">Chart</span><span class="p">,</span> <span class="n">type_chart</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis_x</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">axis_y</span><span class="p">:</span> <span class="n">List</span><span class="p">):</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<p><strong>chart</strong> : altair.Chart</p>
+<p>Any Chart object of Vega-Altair works to be used</p>
+<p><strong>type_chart</strong> : str, ['barchart','scatterplot', 'linechart','piechart']</p>
+<p>Define the type of Chart to be sent to R</p>
+<p><strong>axis_x</strong> : List</p>
+<p>A list that contains the values of the X axis can be either str, int or float</p>
+<p><strong>axis_y</strong> : List</p>
+<p>A list that contains the values of the X axis can be either str, int or float</p>
+<p><strong>Return</strong>:</p>
+<p>It returns a dict object with either of the next keys:</p>
+<ul>
+<li>'res' It contains a string with a description of the chart</li>
+<li>'error' It contains the description of the exception that occurred</li>
+</ul>
+<h2 id="color-schemes">Color schemes</h2>
+<h3 id="color-palettes">Color palettes</h3>
+<p>The following are the available color palettes in tokens these can be found in color brewer</p>
+<ul>
+<li>dark2</li>
+</ul>
+<p><img alt="Texto alternativo" src="../assets/dark2.png" /></p>
+<ul>
+<li>paired</li>
+</ul>
+<p><img alt="Texto alternativo" src="../assets/paired.png" /></p>
+<ul>
+<li>set1</li>
+</ul>
+<p><img alt="Texto alternativo" src="../assets/set1.png" /></p>
+<ul>
+<li>set3</li>
+</ul>
+<p><img alt="Texto alternativo" src="../assets/set3.png" /></p>
+<h3 id="color-patterns">Color patterns</h3>
+<p>When using our function create_accesible_scheme() you can use any of the next patterns with the ID:</p>
+<p>This first batch of a pattern follows the technique of associatiing a color to an object; we choose the most simple
+color
+palette that contains the basic colors.</p>
+<ul>
+<li>red-heart</li>
+</ul>
+<p><img alt="red-heart pattern" src="../assets/red-heart.png" /></p>
+<ul>
+<li>blue-rain</li>
+</ul>
+<p><img alt="blue-rain pattern" src="../assets/blue-rain.png" /></p>
+<ul>
+<li>green-leaf</li>
+</ul>
+<p><img alt="green-leaf pattern" src="../assets/green-leaf.png" /></p>
+<ul>
+<li>purple-grapes</li>
+</ul>
+<p><img alt="purple-grapes pattern" src="../assets/purple-grapes.png" /></p>
+<ul>
+<li>orange-orange</li>
+</ul>
+<p><img alt="orange-orange pattern" src="../assets/orange-orange.png" /></p>
+<ul>
+<li>yellow-star</li>
+</ul>
+<p><img alt="yellow-star pattern" src="../assets/yellow-star.png" /></p>
+<ul>
+<li>brown-chocolate</li>
+</ul>
+<p><img alt="brown-chocolate pattern" src="../assets/brown-chocolate.png" /></p>
+<ul>
+<li>pink-donut</li>
+</ul>
+<p><img alt="pink-donut pattern" src="../assets/pink-donut.png" /></p>
+<ul>
+<li>grey-wrench</li>
+</ul>
+<p>This next batch contains different patterns not following any logic, these were provided by the Irine
+Rios <a href="https://iros.github.io/patternfills/">patterns fills project</a> and the color scheme behind is the same used in the
+accessible theme.</p>
+<p><img alt="grey-wrench pattern" src="../assets/grey-wrench.png" /></p>
+<ul>
+<li>teal-vertical</li>
+</ul>
+<p><img alt="teal-vertical pattern" src="../assets/teal-vertical.png" /></p>
+<ul>
+<li>orange-horizontal</li>
+</ul>
+<p><img alt="orange-horizontal pattern" src="../assets/orange-horizontal.png" /></p>
+<ul>
+<li>purple-diagonal-rl</li>
+</ul>
+<p><img alt="purple-diagonal-rl pattern" src="../assets/purple-diagonal-rl.png" /></p>
+<ul>
+<li>pink-diagonal-lr</li>
+</ul>
+<p><img alt="pink-diagonal-lr pattern" src="../assets/pink-diagonal-lr.png" /></p>
+<ul>
+<li>green-dots-inv</li>
+</ul>
+<p><img alt="green-dots-inv pattern" src="../assets/green-dots-inv.png" /></p>
+<ul>
+<li>yellow-circles</li>
+</ul>
+<p><img alt="yellow-circles pattern" src="../assets/yellow-circles.png" /></p>
+<ul>
+<li>brown-cross</li>
+</ul>
+<p><img alt="brown-cross pattern" src="../assets/brown-cross.png" /></p>
+<ul>
+<li>grey-houndstooth</li>
+</ul>
+<p><img alt="grey-houndstooth pattern" src="../assets/grey-houndstooth.png" /></p>
+<h2 id="tokens">Tokens</h2>
+<p>The tokens python file contains resources of colors, font sizes, spacing sizes, color palettes, etc.</p>
+<p>A good example would be to import a color palette and use it in a chart</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">altair_easeviz.tokens</span> <span class="kn">import</span> <span class="n">COLORS</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">color_palette</span> <span class="o">=</span> <span class="n">COLORS</span><span class="p">[</span><span class="s1">&#39;schemes&#39;</span><span class="p">][</span><span class="s1">&#39;categorical&#39;</span><span class="p">][</span><span class="s1">&#39;ibm&#39;</span><span class="p">]</span>  <span class="c1"># Return a list of colors in HEX</span>
+</code></pre></div>
+<h2 id="types">Types</h2>
+<p><a href="https://docs.python.org/3/library/typing.html">Typing</a> in python was used to ensure and give hints in future
+developments of what to expect in a variable a good example would be that we used this to highlight how a parameter in a
+vega-lite specification should have, does not affect the compiling process but helps to develop, the next is an example
+of what should have a Config type.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Chart theme configuration.&quot;&quot;&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">axisBand</span><span class="p">:</span> <span class="n">Axis</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">axisY</span><span class="p">:</span> <span class="n">Axis</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">legend</span><span class="p">:</span> <span class="n">Legend</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">arc</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">bar</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">line</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">path</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">point</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">rect</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">rule</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">shape</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="n">text</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="nb">range</span><span class="p">:</span> <span class="n">ScaleRange</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="n">background</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">group</span><span class="p">:</span> <span class="n">Mark</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="n">header</span><span class="p">:</span> <span class="n">Header</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="n">title</span><span class="p">:</span> <span class="n">Title</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="n">view</span><span class="p">:</span> <span class="n">View</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/MiguelUB/altair-easeviz"  target="_blank" rel="noopener"> Github</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/MiguelUB/altair-easeviz" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/miguel-huayllas/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+    
+  </body>
+</html>
