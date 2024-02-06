@@ -60,3 +60,9 @@ alt.Chart(source).mark_bar().encode(
 
 ***
 For bugs and feature requests, please open a [Github Issue](https://github.com/MiguelUB/altair-easeviz/issues).
+
+## Collaborators
+***
+This project was developed alongside [Dr. Mireia Ribera ](https://www.eina.cat/es/conoce-eina/profesorado/mireia-ribera)as an advisor on topics related to accessibility. 
+
+The project was developed as the final project for the [University of Barcelona](https://mat.ub.edu/grauinformatica/) in the degree of Computer Science.
